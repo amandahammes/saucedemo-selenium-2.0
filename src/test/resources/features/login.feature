@@ -5,10 +5,10 @@ Funcionalidade: Realizar login
   Para acessar a lista de produtos e realizar compras
 
   Esquema do Cenario: Realizar login com sucesso
-    Dado que eu estou na página de login do SauceDemo
-    Quando eu insiro o usuário <user> e a senha <password>
+    Dado que estou na página de login do SauceDemo
+    Quando insiro o usuário <user> e a senha <password>
     E clico no botão de login
-    Então eu devo ser redirecionado para a página de produtos
+    Então devo ser redirecionado para a página de produtos
 
     Exemplos:
       |     user      |   password   |

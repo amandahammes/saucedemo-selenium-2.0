@@ -1,4 +1,4 @@
-package com.saucedemo;
+package com.saucedemo.runners;
 
 
 import org.junit.platform.suite.api.*;
