@@ -18,6 +18,6 @@ public class InventoryValidation {
     public void validarPaginaDeProdutos(){
         wait.loadElement(inventoryPage.tituloProdutos);
         String textoProducts = inventoryPage.tituloProdutos.getText();
-        Assertions.assertEquals("Products", textoProducts, "O login não redirecionou para a página de produtos!");
+        Assertions.assertEquals("Products", textoProducts, "O login não foi realizado ou não redirecionou para a página de produtos!");
     }
 }

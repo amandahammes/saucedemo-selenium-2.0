@@ -18,5 +18,6 @@ public class LoginPage {
     public WebElement inputSenha;
     @FindBy(xpath = "//input[@id='login-button']")
     public WebElement botaoLogin;
-
+    @FindBy(xpath = "//h3[@data-test='error']")
+    public WebElement mensagemErro;
 }

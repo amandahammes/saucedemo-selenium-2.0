@@ -6,5 +6,21 @@
   "usuarioBloqueado": {
     "user": "locked_out_user",
     "pass": "secret_sauce"
+  },
+  "usuarioSenhaErrada": {
+    "user": "standard_user",
+    "pass": "senha_errada"
+  },
+  "usuarioErrado": {
+    "user": "usuario_errado",
+    "pass": "secret_sauce"
+  },
+  "usuarioSemSenha": {
+    "user": "standard_user",
+    "pass": ""
+  },
+  "senhaSemUsuario": {
+    "user": "",
+    "pass": "secret_sauce"
   }
 }

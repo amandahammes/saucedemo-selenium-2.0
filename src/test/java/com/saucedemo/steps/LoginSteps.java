@@ -17,7 +17,6 @@ public class LoginSteps {
     private LoginValidation loginValidation;
     private InventoryValidation inventoryValidation;
 
-
     public LoginSteps() {
         this.driver = DriverManager.getDriver(TypeBrowser.CHROME);
         this.loginInteractions = new LoginInteractions(driver);
@@ -28,9 +27,9 @@ public class LoginSteps {
     public void acessarPaginaSauceDemo() {
         loginValidation.validarPaginaLogin();
     }
-    @Quando("insiro o usuário {string} e a senha {string}")
-    public void inserirUsuarioESenhaParaLogin(String usuario, String senha) {
-        loginInteractions.preencherCamposLoginESenha();
+    @Quando("insiro o usuário e a senha do {string}")
+    public void inserirUsuarioESenhaParaLogin(String tipoUsuario) {
+        loginInteractions.preencherCamposLoginESenha(tipoUsuario);
     }
     @E("clico no botão de login")
     public void clicarBtnLogin() {
@@ -39,5 +38,13 @@ public class LoginSteps {
     @Entao("devo ser redirecionado para a página de produtos")
     public void validarLoginAoIrParaPaginaDeProdutos() {
         inventoryValidation.validarPaginaDeProdutos();
+    }
+    @Entao("a mensagem de {string} aparecerá em tela")
+    public void validarMensagemDeErro(String mensagemErro) {
+        loginValidation.validarMensagemDeErroDoLogin(mensagemErro);
+    }
+    @E("o login não será realizado")
+    public void validarLoginNaoRealizado(){
+        loginValidation.validarPaginaLogin();
     }
 }

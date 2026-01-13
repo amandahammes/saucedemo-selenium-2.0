@@ -13,9 +13,9 @@ public class LoginInteractions {
         this.loginPage = new LoginPage(driver);
     }
 
-    public void preencherCamposLoginESenha(){
-        loginPage.inputUsuario.sendKeys(DataFactory.getUsuario("usuarioValido"));
-        loginPage.inputSenha.sendKeys(DataFactory.getSenha("usuarioValido"));
+    public void preencherCamposLoginESenha(String tipoUsuario){
+        loginPage.inputUsuario.sendKeys(DataFactory.getUsuario(tipoUsuario));
+        loginPage.inputSenha.sendKeys(DataFactory.getSenha(tipoUsuario));
     }
     public void clicarBotaoLogin(){
         loginPage.botaoLogin.click();
