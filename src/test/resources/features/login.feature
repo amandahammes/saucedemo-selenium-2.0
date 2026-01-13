@@ -4,6 +4,7 @@ Funcionalidade: Realizar login
   Quero realizar a autenticação no sistema
   Para acessar a lista de produtos e realizar compras
 
+  @CT001
   Esquema do Cenario: Realizar login com sucesso
     Dado que estou na página de login do SauceDemo
     Quando insiro o usuário <user> e a senha <password>

@@ -5,8 +5,10 @@ import com.saucedemo.browser.TypeBrowser;
 import com.saucedemo.report.Report;
 import com.saucedemo.report.ReportType;
 import com.saucedemo.report.Screenshot;
+import com.saucedemo.utils.PropertiesReader;
 import io.cucumber.java.*;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.WebDriver;
 
 import static com.aventstack.extentreports.Status.FAIL;
 import static com.aventstack.extentreports.Status.PASS;
@@ -16,7 +18,9 @@ public class Hook {
     @Before
     public void setUp(Scenario scenario){
         Report.createTest(scenario.getName(), ReportType.SINGLE);
-        DriverManager.getDriver(TypeBrowser.CHROME);
+        WebDriver driver = DriverManager.getDriver(TypeBrowser.CHROME);
+        String url = PropertiesReader.getProp("URL");
+        driver.get(url);
     }
 
     @After
