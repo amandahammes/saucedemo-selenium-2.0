@@ -17,6 +17,18 @@
         <maven.compiler.release>21</maven.compiler.release>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.11.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -26,13 +38,11 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>6.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>6.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -43,18 +53,30 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.31.0</version>
+            <version>7.18.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>7.31.0</version>
+            <version>7.18.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>2.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.20.0</version>
         </dependency>
     </dependencies>
 </project>
