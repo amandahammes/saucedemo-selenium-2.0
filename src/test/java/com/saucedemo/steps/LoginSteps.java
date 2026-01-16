@@ -4,7 +4,7 @@ import com.saucedemo.browser.DriverManager;
 import com.saucedemo.browser.TypeBrowser;
 import com.saucedemo.interactions.LoginInteractions;
 import com.saucedemo.validations.LoginValidation;
-import com.saucedemo.validations.InventoryValidation;
+import com.saucedemo.validations.ShoppingValidation;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
@@ -15,13 +15,13 @@ public class LoginSteps {
     private WebDriver driver;
     private LoginInteractions loginInteractions;
     private LoginValidation loginValidation;
-    private InventoryValidation inventoryValidation;
+    private ShoppingValidation inventoryValidation;
 
     public LoginSteps() {
         this.driver = DriverManager.getDriver(TypeBrowser.CHROME);
         this.loginInteractions = new LoginInteractions(driver);
         this.loginValidation = new LoginValidation(driver);
-        this.inventoryValidation = new InventoryValidation(driver);
+        this.inventoryValidation = new ShoppingValidation(driver);
     }
     @Dado("que estou na página de login do SauceDemo")
     public void acessarPaginaSauceDemo() {
