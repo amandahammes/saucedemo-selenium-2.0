@@ -31,6 +31,7 @@ public class Hook {
         } else {
             Report.log(PASS, "Cenário executado com sucesso!");
         }
+        Report.close();
         DriverManager.quitDriver();
     }
 }
