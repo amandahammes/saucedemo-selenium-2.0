@@ -9,6 +9,6 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.saucedemo.steps")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@CT006")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@CT007")
 public class Runner {
 }

@@ -75,3 +75,13 @@ Funcionalidade: Realizar compras
     Exemplos:
       |       user      |  nome | sobrenome |   cep    |
       | "usuarioValido" | "Ana" |  "Banana" | "123456" |
+
+  @CT007
+  Esquema do Cenario: Cenario: Realizar logout com sucesso
+    Dado que estou logado com <user> na página SauceDemo
+    Quando seleciono a opcao logout no menu
+    Então devo ser direcionado para a página de login
+
+    Exemplos:
+    |       user      |
+    | "usuarioValido" |
