@@ -14,12 +14,11 @@ Mapeamento de prioridade e risco para garantir a qualidade do fluxo principal de
 | **CT-002** | Login Usuário Inválido            | Média      | Baixo   | Tentativas de invasão (brute force) sem barreira de erro.       |
 | **CT-003** | Compra de um Item                 | Alta       | Crítico | Principal fluxo de receita. Falha impede a venda.               |
 | **CT-004** | Compra de dois Itens              | Alta       | Crítico | Erro no cálculo de múltiplos itens gera prejuízo financeiro.    |
-| **CT-005** | Compra de todos os Itens          | Alta       | Crítico | Sobrecarga do carrinho ou erro no processamento de massa.       |
-| **CT-006** | Checkout sem First Name           | Média      | Médio   | Dados de entrega incompletos gerando falha logística.           |
-| **CT-006** | Checkout sem Last Name            | Média      | Médio   | Dados de entrega incompletos gerando falha logística.           |
-| **CT-006** | Checkout sem Postal Code          | Alta       | Alto    | Impossibilidade de calcular frete ou entregar o produto.        |
-| **CT-007** | Compra via Página de Descrição    | Média      | Médio   | Quebra de fluxo de navegação alternativo.                       |
-| **CT-008** | Realizar Logout                   | Média      | Médio   | Sessões abertas em dispositivos públicos (falha de segurança).  |
+| **CT-005** | Checkout sem First Name           | Média      | Médio   | Dados de entrega incompletos gerando falha logística.           |
+| **CT-005** | Checkout sem Last Name            | Média      | Médio   | Dados de entrega incompletos gerando falha logística.           |
+| **CT-005** | Checkout sem Postal Code          | Alta       | Alto    | Impossibilidade de calcular frete ou entregar o produto.        |
+| **CT-006** | Compra via Página de Descrição    | Média      | Médio   | Quebra de fluxo de navegação alternativo.                       |
+| **CT-007** | Realizar Logout                   | Média      | Médio   | Sessões abertas em dispositivos públicos (falha de segurança).  |
 
 ## Tecnologias Utilizadas
 
@@ -53,7 +52,7 @@ Você precisa ter instalado na sua máquina:
 
 #### Executar via Runner
 - No IntelliJ (ou na sua IDE de preferência), navegue até a pasta src/test/java/runners e execute a classe Runner.
-- Para executar cenários específicos, altere a anotação `@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@CT002")` com o valor de value igual ao teste que deseja executar (no exemplo, o CT002).
+- Para executar cenários específicos, altere a anotação `@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@CT002")` com o valor de value igual ao teste que deseja executar (no exemplo, o CT002) e clique na setinha de run ao lado do da chamada da classe Runner.
 
 ## Relatórios
 
