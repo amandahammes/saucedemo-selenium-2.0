@@ -2,8 +2,11 @@ package com.saucedemo.steps;
 
 import com.saucedemo.browser.DriverManager;
 import com.saucedemo.browser.TypeBrowser;
+import com.saucedemo.interactions.LoginInteractions;
 import com.saucedemo.interactions.ShoppingInteractions;
+import com.saucedemo.validations.LoginValidation;
 import com.saucedemo.validations.ShoppingValidation;
+import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -13,11 +16,15 @@ public class ShoppingSteps {
     private WebDriver driver;
     private ShoppingInteractions shoppingInteractions;
     private ShoppingValidation shoppingValidation;
+    private LoginValidation loginValidation;
+    private LoginInteractions loginInteractions;
 
     public ShoppingSteps() {
         this.driver = DriverManager.getDriver(TypeBrowser.CHROME);
         this.shoppingInteractions = new ShoppingInteractions(driver);
         this.shoppingValidation = new ShoppingValidation(driver);
+        this.loginValidation = new LoginValidation(driver);
+        this.loginInteractions = new LoginInteractions(driver);
     }
 
     @E("seleciono item para compra")
@@ -60,9 +67,23 @@ public class ShoppingSteps {
     public void entrarTelaDescricaoItem(){
         shoppingInteractions.irPaginaDescricaoItemOnesie();
     }
-
     @E("seleciono item para compra na tela de descricao de item")
     public void selecionarItemNaTelaDescricaoDoItem(){
         shoppingInteractions.colocarItemNoCarrinhoEmPaginaDescricaoItem();
+    }
+    @Dado("que estou logado com {string} na página SauceDemo")
+    public void validarEstarLogadoPaginaSauceDemo(String tipoUsuario){
+        loginInteractions.preencherCamposLoginESenha(tipoUsuario);
+        loginInteractions.clicarBotaoLogin();
+        shoppingValidation.validarPaginaDeProdutos();
+    }
+    @Quando("seleciono a opcao logout no menu")
+    public void selecionarLogoutNoMenu(){
+        shoppingInteractions.abrirMenuHamburguer();
+        shoppingInteractions.selecionarBotaoLogout();
+    }
+    @Entao("devo ser direcionado para a página de login")
+    public void validarPaginaLoginAoRealizarLogout(){
+        loginValidation.validarPaginaLogin();
     }
 }

@@ -1,24 +1,27 @@
 package com.saucedemo.interactions;
 
-import com.saucedemo.pages.InventoryPage;
+import com.saucedemo.browser.Waits;
+import com.saucedemo.pages.ShoppingPage;
 import org.openqa.selenium.WebDriver;
 
 public class ShoppingInteractions {
     private WebDriver driver;
-    private InventoryPage inventoryPage;
+    private ShoppingPage shoppingPage;
+    private Waits waits;
 
     public ShoppingInteractions(WebDriver driver) {
         this.driver = driver;
-        this.inventoryPage = new InventoryPage(driver);
+        this.waits = new Waits(driver);
+        this.shoppingPage = new ShoppingPage(driver);
     }
     public void selecionarItemParaCompra(){
-        inventoryPage.btnAddSauceLabsBackPack.click();
+        shoppingPage.btnAddSauceLabsBackPack.click();
     }
     public void irParaCarrinho(){
-        inventoryPage.carrinho.click();
+        shoppingPage.carrinho.click();
     }
     public void irParaCheckout(){
-        inventoryPage.btnCheckout.click();
+        shoppingPage.btnCheckout.click();
     }
     public void realizarCheckout(String nome, String sobrenome, String cep){
         preencherNomeCheckout(nome);
@@ -26,28 +29,35 @@ public class ShoppingInteractions {
         preencherCepCheckout(cep);
     }
     public void preencherNomeCheckout(String nome){
-        inventoryPage.inputNomeCheckout.sendKeys(nome);
+        shoppingPage.inputNomeCheckout.sendKeys(nome);
     }
     public void preencherSobrenomeCheckout(String sobrenome){
-        inventoryPage.inputSobrenomeCheckout.sendKeys(sobrenome);
+        shoppingPage.inputSobrenomeCheckout.sendKeys(sobrenome);
     }
     public void preencherCepCheckout(String cep){
-        inventoryPage.inputCepCheckout.sendKeys(cep);
+        shoppingPage.inputCepCheckout.sendKeys(cep);
     }
     public void clicarBotaoContinue(){
-        inventoryPage.btnContinue.click();
+        shoppingPage.btnContinue.click();
     }
     public void finalizarCompra(){
-        inventoryPage.btnFinalizarCompra.click();
+        shoppingPage.btnFinalizarCompra.click();
     }
     public void selecionarDoisItensParaCompra(){
-        inventoryPage.btnAddSauceLabsBackPack.click();
-        inventoryPage.btnAddBoltTshirt.click();
+        shoppingPage.btnAddSauceLabsBackPack.click();
+        shoppingPage.btnAddBoltTshirt.click();
     }
     public void irPaginaDescricaoItemOnesie(){
-        inventoryPage.caminhoPagicaDescricaoItemOnesie.click();
+        shoppingPage.caminhoPagicaDescricaoItemOnesie.click();
     }
     public void colocarItemNoCarrinhoEmPaginaDescricaoItem(){
-        inventoryPage.bntAddAoCarrinhoPaginaDescricao.click();
+        shoppingPage.bntAddAoCarrinhoPaginaDescricao.click();
+    }
+    public void abrirMenuHamburguer(){
+        shoppingPage.btnMenuHamburguer.click();
+    }
+    public void selecionarBotaoLogout(){
+        waits.loadElement(shoppingPage.btnLogout);
+        shoppingPage.btnLogout.click();
     }
 }
