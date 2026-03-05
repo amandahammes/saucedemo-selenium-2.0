@@ -20,5 +20,4 @@ public class LoginInteractions {
     public void clicarBotaoLogin(){
         loginPage.botaoLogin.click();
     }
-
 }
