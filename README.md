@@ -1,6 +1,6 @@
 # Automação SauceDemo Selenium & Cucumber
 
-<p align="center"> <img src="saucedemo-logo.png" width="500px"> </p>
+<p align="center"><img src="saucedemo-logo.png" width="500px"></p>
 
 ## Cenários Desenvolvidos
 
